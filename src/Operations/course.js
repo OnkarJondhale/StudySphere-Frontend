@@ -1,5 +1,7 @@
 import {toast, ToastBar} from 'react-hot-toast'
 
+const URL = import.meta.env.VITE_BACKEND_URL
+
 export function getEnrolledCourses(token)
 {
     return async(dispatch)=>{
@@ -7,7 +9,7 @@ export function getEnrolledCourses(token)
         let result = []
         try 
         {   
-            const response = await fetch('http://localhost:3000/profile/getenrolledcourses',{
+            const response = await fetch(`${URL}profile/getenrolledcourses`,{
                 method : 'GET',
                 headers : 
                 {
@@ -41,7 +43,7 @@ export function createCourse(formData,token)
         let result = []
         try 
         {   
-            const response = await fetch('http://localhost:3000/course/createCourse',{
+            const response = await fetch(`${URL}course/createCourse`,{
                 method : 'POST',
                 headers : 
                 {
@@ -77,7 +79,7 @@ export function getMyCourses(token)
         let result = []
         try 
         {
-            const response = await fetch('http://localhost:3000/course/mycourse',{
+            const response = await fetch(`${URL}course/mycourse`,{
                 method : "GET",
                 headers : 
                 {
@@ -112,7 +114,7 @@ export function createSection(sectionName,courseId)
         let result = null;
         try 
         {
-            const response = await fetch('http://localhost:3000/course/createSection',{
+            const response = await fetch(`${URL}course/createSection`,{
                 method : 'POST',
                 headers : 
                 {
@@ -155,7 +157,7 @@ export function createSubsection(subSectionDetails,sectionId)
         let a = false;
         try 
         {
-            const response = await fetch('http://localhost:3000/course/createsubsection',{
+            const response = await fetch(`${URL}course/createsubsection`,{
                 method : 'POST',
                 body : formData
             })
@@ -187,7 +189,7 @@ export function deleteAddedSection(sectionId)
         console.log(sectionId)
         try 
         {
-            const response = await fetch(`http://localhost:3000/course/deletesection/${sectionId}`,{
+            const response = await fetch(`${URL}course/deletesection/${sectionId}`,{
                 method : 'DELETE'
             })
 
@@ -216,7 +218,7 @@ export function getCourseDetails(courseId,token)
         const toastId = toast.loading("Loading...");
         try 
         {
-            const response = await fetch(`http://localhost:3000/course/getcoursedetails`,{
+            const response = await fetch(`${URL}course/getcoursedetails`,{
                 method : 'POST',
                 headers : {
                     'Content-Type': 'application/json'
@@ -253,7 +255,7 @@ export function getAllCourses()
         const toastId = toast.loading("Loading...");
         try 
         {
-            const response = await fetch(`http://localhost:3000/course/getallcourses`,{
+            const response = await fetch(`${URL}course/getallcourses`,{
                 method : 'GET'
             })
 

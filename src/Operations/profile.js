@@ -3,13 +3,15 @@ import {toast} from 'react-hot-toast'
 import { setProfile } from '../Redux/Slices/profileSlice';
 import { setSignUpData } from '../Redux/Slices/authSlice';
 
+const URL = import.meta.env.VITE_BACKEND_URL
+
 export function getProfileData(token)
 {
     return async(dispatch)=>{
         const toastId = toast.loading('Loading...')
         try 
         {
-            const response = await fetch('http://localhost:3000/profile/getuserdetail',{
+            const response = await fetch(`${URL}profile/getuserdetail`,{
                 method : 'POST',
                 headers : 
                 {
@@ -41,7 +43,7 @@ export function updateProfileDetails(token,data)
         const toastId = toast.loading('Loading...');
         try 
         {
-            const response = await fetch('http://localhost:3000/profile/updateprofile',{
+            const response = await fetch(`${URL}profile/updateprofile`,{
                 method : 'PUT',
                 headers: 
                 { 
@@ -79,7 +81,7 @@ export function uploadFile(token,formData)
         const toastId = toast.loading('Loading...');
         try 
         {
-            const response = await fetch('http://localhost:3000/profile/updateimage',
+            const response = await fetch(`${URL}profile/updateimage`,
                 {
                     method : 'PUT',
                     headers : 

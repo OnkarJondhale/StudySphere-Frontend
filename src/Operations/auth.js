@@ -4,12 +4,14 @@ import { setProfile } from '../Redux/Slices/profileSlice.js';
 
 import {toast} from 'react-hot-toast'
 
+const URL = import.meta.env.VITE_BACKEND_URL
+
 export function sendOtp(email,navigate) {
     return async (dispatch) => {
       const toastId = toast.loading("Loading...")
       try 
       {
-        const response = await fetch('http://localhost:3000/user/createotp', {
+        const response = await fetch(`${URL}user/createotp`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +42,7 @@ export function sendOtp(email,navigate) {
       const toastId = toast.loading("Loading...")
       try 
       {
-        const response = await fetch('http://localhost:3000/user/signup',{
+        const response = await fetch(`${URL}user/signup`,{
             method : 'POST',
             headers : 
             {
@@ -76,7 +78,7 @@ export function sendOtp(email,navigate) {
         console.log(data);
         try 
         {
-            const response = await fetch('http://localhost:3000/user/login',{
+            const response = await fetch(`${URL}user/login`,{
                 method : 'POST',
                 headers :
                 {
@@ -133,7 +135,7 @@ export function getPasswordResetToken(email,navigate) {
       const toastId = toast.loading("Loading...")
       try 
       {
-        const response = await fetch('http://localhost:3000/user/resetpasswordtoken',{
+        const response = await fetch(`${URL}user/resetpasswordtoken`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -166,7 +168,7 @@ export function getPasswordResetToken(email,navigate) {
       const data = {token,password,confirmPassword};
       try 
       {
-        const response = await fetch('http://localhost:3000/user/resetpassword',{
+        const response = await fetch(`${URL}user/resetpassword`,{
           method: "POST",
             headers: {
                 'Content-Type': 'application/json'

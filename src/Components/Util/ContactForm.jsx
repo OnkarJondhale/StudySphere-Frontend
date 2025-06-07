@@ -810,7 +810,8 @@ function ContactForm()
       {
             try 
             {
-                const response = await fetch('http://localhost:3000/user/contactus',{
+                const URL = import.meta.env.VITE_BACKEND_URL;
+                const response = await fetch(`${URL}user/contactus`,{
                     method : "POST",
                     headers : 
                     {

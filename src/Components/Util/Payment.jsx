@@ -26,7 +26,7 @@ const Payment = () => {
   const handlePayment = async () => {
     const toastId = toast.loading('Loading...')
     try {
-      const response = await fetch('http://localhost:3000/payment/createorder', {
+      const response = await fetch(`${URL}payment/createorder`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const Payment = () => {
     const toastId = toast.loading('Loading...')
 
     try {
-      const verificationResponse = await fetch('http://localhost:3000/payment/verifypayment', {
+      const verificationResponse = await fetch(`${URL}payment/verifypayment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const Payment = () => {
   if (!course) {
     return (
       <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center items-center">
-        {/* Loading State or Placeholder */}
+        <p className='text-xl font-bold'> COURSE NOT FOUND </p>
       </div>
     );
   }
