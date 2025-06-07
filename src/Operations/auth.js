@@ -73,6 +73,7 @@ export function sendOtp(email,navigate) {
 
   export function login(data,navigate)
   {
+    console.log(URL);
     return async(dispatch) => {
         const toastId = toast.loading("Loading...")
         console.log(data);
@@ -106,7 +107,6 @@ export function sendOtp(email,navigate) {
             localStorage.setItem("user", JSON.stringify(value.data));
             toast.error('Login successful');
             navigate('/dashboard/myprofile')
-            location.reload();
         }
         catch(error)
         {
