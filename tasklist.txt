@@ -1,0 +1,10 @@
+footer 
+contact us :- make it work using nodemailer 
+
+
+delete account route
+change password
+progress of video watched
+cart section 
+
+imporve ui of video section 

@@ -1,0 +1,123 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html,body 
+{
+    overflow-x: hidden;
+}
+
+.code1 {
+    width: 372.95px;
+    height: 257.05px;
+    border-radius: 100%;
+    left: calc(50% - 372.95px / 2 - 76.53px);
+    top: calc(50% - 257.05px / 2 - 47.47px);
+    background: linear-gradient(
+      123.77deg,
+      #8a2be2 -6.46%,
+      #ffa500 59.04%,
+      #f8f8ff 124.53%
+    );
+    opacity: 0.2;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+  }
+
+  .code2 {
+    width: 372.95px;
+    height: 257.05px;
+    left: calc(50% - 372.95px / 2 - 76.53px);
+    top: calc(50% - 257.05px / 2 - 47.47px);
+    border-radius: 100%;
+    background: linear-gradient(
+      118.19deg,
+      #1fa2ff -3.62%,
+      #12d8fa 50.44%,
+      #a6ffcb 104.51%
+    );
+    opacity: 0.2;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 50%, #ffffff 50%, #ff7e5f 100%);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+@keyframes slideIn {
+  from {
+    right: -85%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+  to {
+    right: -85%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 85%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 85%;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.sidebar-hidden {
+  animation: slideOut 0.5s forwards;
+}
+
+.sidebar-visible {
+  animation: slideIn 0.5s forwards;
+}
+
+.sidebar-down {
+  animation: slideDown 0.5s forwards;
+}
+
+.sidebar-up {
+  animation: slideUp 0.5s forwards;
+}
